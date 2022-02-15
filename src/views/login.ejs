@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+<script src="js/jquery.min.js"></script>
+    
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--flexslider-->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<!--//flexslider-->
+<head>
+    <title>Login page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header" >
+        <div class="col-md-3 header-top cbp-spmenu-push">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <a  href="http://150.158.168.128/cfps/index.html"  >主页</a>
+                <a  href="http://150.158.168.128/cfps/about.html"  >项目</a>
+                <a  href="http://150.158.168.128/cfps/single.html"  >调查1</a>
+                <a  href="http://150.158.168.128/cfps/single02.html"  >调查2</a>
+                <a  href="http://150.158.168.128/cfps/houxu.html"  >Jupyter</a>
+                
+            </nav>
+            <!-- /script-nav -->
+                <div class="main">
+                    <section class="buttonset">
+                        <button id="showLeftPush"><i  class="glyphicon glyphicon-menu-hamburger"></i></button>
+                    </section>
+                </div>
+            
+                <script src="js/classie.js"></script>
+                <script>
+                    var	menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+                    showLeftPush = document.getElementById( 'showLeftPush' ),
+                    body = document.body;
+                        
+                    showLeftPush.onclick = function() {
+                        classie.toggle( this, 'active' );
+                        classie.toggle( body, 'cbp-spmenu-push-toright' );
+                        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                        disableOther( 'showLeftPush' );
+                    };
+                </script>
+        </div>
+        <div class="col-md-6 logo">
+            <h1><a href="index.html"><span>cfps</span>分析</a></h1>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+<div class="container">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-7 login-left">
+            </div>
+            <div class="col-5 mt-2">
+                <div>
+                    <% if(errors != "") { %>
+                        <% errors.forEach((item) => { %>
+                            <div class="alert alert-danger">
+                                <%- item %>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+                <form method="POST" action="/login">
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email" name="email"  placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </form>
+
+                <hr>
+                <div>
+                    If you haven't had an account. <a href="/register">Create a new account</a>.
+                </div>
+                <div>
+                    Return to <a href="/">Home Page</a>
+                </div>
+                <br><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-mid">
+            
+        </div>   
+        <div class="class-footer">
+            <div class="container">
+                <div class="col-md-6 footer-nav">
+                    <ul>
+                        <li ><a  href="http://150.158.168.128/cfps/index.html"  >主页</a></li>
+                        <li><a  href="http://150.158.168.128/cfps/about.html"  >项目</a></li>
+                        <li><a href="http://150.158.168.128/cfps/single.html"  >调查1</a></li>
+                        <li><a  href="http://150.158.168.128/cfps/single02.html" >调查2</a></li>
+                        <li><a  href="http://150.158.168.128/cfps/houxu.html" > Jupyter</a></li>
+
+                        
+                    </ul>
+            
+        </div>
+    </div>
+</div>
+<!--//footter-->
+</body>
+</html>
