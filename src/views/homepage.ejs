@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>登陆注册主页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+<script src="js/jquery.min.js"></script>
+
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--flexslider-->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<!--//flexslider-->
+<body>
+    <div class="header" >
+        <div class="col-md-3 header-top cbp-spmenu-push">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <a  href="http://150.158.168.128/cfps/index.html"  >主页</a>
+                <a  href="http://150.158.168.128/cfps/about.html"  >项目</a>
+                <a  href="http://150.158.168.128/cfps/single.html"  >调查1</a>
+                <a  href="http://150.158.168.128/cfps/single02.html"  >调查2</a>
+                <a  href="http://150.158.168.128/cfps/houxu.html"  >Jupyter</a>
+                
+            </nav>
+            <!-- /script-nav -->
+                <div class="main">
+                    <section class="buttonset">
+                        <button id="showLeftPush"><i  class="glyphicon glyphicon-menu-hamburger"></i></button>
+                    </section>
+                </div>
+            
+                <script src="js/classie.js"></script>
+                <script>
+                    var	menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+                    showLeftPush = document.getElementById( 'showLeftPush' ),
+                    body = document.body;
+                        
+                    showLeftPush.onclick = function() {
+                        classie.toggle( this, 'active' );
+                        classie.toggle( body, 'cbp-spmenu-push-toright' );
+                        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                        disableOther( 'showLeftPush' );
+                    };
+                </script>
+        </div>
+        <div class="col-md-6 logo">
+            <h1><a href="index.html"><span>cfps</span>分析</a></h1>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+<div class="event-news">
+    <div class="container">
+    <div class="content-events">
+            <h3>Jupyterhub &amp; Jupyter Notebook</h3>
+            <p>Welcome "<%= user.fullname%>"</p>
+            <p>To Your Jupyter Notebook and Our Jupyterhub</p>
+        </div>	
+            <div class="news">
+                <div class="col-md-4 new-more">
+                    <div class="now-more1">
+                        <div class="event">
+                            <h4>多个单用户的NOTEBOOK</h4>
+                            <label></label>
+                            <h6><a href="<%= user.jupyter%>">Jupyter Notebook</a></h6>
+                            <p>use "<%= user.jupyterpassword%> " to login your jupyter notebook</p>
+                        <a href="<%= user.jupyter%>" class="hvr-rectangle-out ">Jupyter Notebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 new-more">
+                    <div class="now-more1">
+                        <div class="event">
+                            <h4>一个多用户的HUB</h4>
+                            <label></label>
+                            <h6><a href="http://150.158.168.128:8000/">Jupyterhub</a></h6>
+                            <p>use "Username : testuser2     Password : TImEWJ4ajNaI2IhK" to login our jupyterhub</p>
+                        <a href="http://150.158.168.128:8000/" class="hvr-rectangle-out ">Jupyterhub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 new-more">
+                    <div class="now-more1">
+                        <div class="event">
+                            <h4>返回主页</h4>
+                            <label></label>
+                            <h6><a href="http://150.158.168.128/cfps/index.html">HOMEPAGE</a></h6>
+                            <p>Back to the HOMEPAGE</p>
+                            <p>Without login out</p>
+                        <a href="http://150.158.168.128/cfps/index.html" class="hvr-rectangle-out ">HOMEPAGE</a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="clearfix"> </div>
+            </div>
+        </div>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="container">
+    <div class="container mt-5">
+<form method="POST" action="/logout">
+    <button type="submit" class="btn btn-primary">Log out</button>
+</form>
+    </div>
+</div>            
+
+<div class="footer">
+    <div class="footer-mid">
+            
+        </div>   
+        <div class="class-footer">
+            <div class="container">
+                <div class="col-md-6 footer-nav">
+                    <ul>
+                        <li ><a  href="http://150.158.168.128/cfps/index.html"  >主页</a></li>
+                        <li><a  href="http://150.158.168.128/cfps/about.html"  >项目</a></li>
+                        <li><a href="http://150.158.168.128/cfps/single.html"  >调查1</a></li>
+                        <li><a  href="http://150.158.168.128/cfps/single02.html" >调查2</a></li>
+                        <li><a  href="http://150.158.168.128/cfps/houxu.html" > Jupyter</a></li>
+
+                        
+                    </ul>
+            
+        </div>
+    </div>
+</div>
+<!--//footter-->
+</body>
+</html>
